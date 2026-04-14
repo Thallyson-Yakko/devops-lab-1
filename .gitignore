@@ -1,0 +1,51 @@
+# Terraform - State files (contém estado da infraestrutura, não deve ser versionado)
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+terraform/terraform.tfstate.*.backup
+
+# Terraform - Diretório de providers (binários grandes, regenerados via terraform init)
+terraform/.terraform/
+
+# Terraform - Lock file (opcional: pode ser versionado para garantir versões dos providers)
+# terraform/.terraform.lock.hcl
+
+# Python - Cache e bytecode compilado
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Python - Ambientes virtuais
+env/
+venv/
+ENV/
+.venv/
+
+# Python - Distribuição e build
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Variáveis de ambiente sensíveis
+.env
+.env.local
+.env.*.local
+
+# IDEs e editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Docker override local
+docker-compose.override.yaml

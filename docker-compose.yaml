@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  app:
+    build: . 
+    image: app_sqs:latest
+    container_name: app-sqs
+    ports:
+      - "8080:8080"
+    environment:
+      - AWS_ENDPOINT_URL=http://ministack:4566
+      - AWS_DEFAULT_REGION=us-east-1
+      - AWS_ACCESS_KEY_ID=test
+      - AWS_SECRET_ACCESS_KEY=test
+      - S3_BUCKET=test-ministack
+      - SQS_QUEUE_URL=http://ministack:4566/000000000000/test-sqs
+    depends_on:
+          - ministack
+
+  ministack:
+    image: ministackorg/ministack:latest
+    container_name: ministack
+    ports:
+      - "4566:4566"
